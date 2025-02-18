@@ -1346,6 +1346,44 @@
     </section>
     <!-- End Google Maps Area -->
 
+    <!-- WhatsApp Float Button -->
+    <a href="#" class="whatsapp-float" id="whatsappButton">
+      <i class="fa fa-whatsapp"></i>
+    </a>
+
+    <!-- WhatsApp Chat Window -->
+    <div class="whatsapp-chat" id="whatsappChat">
+      <div class="chat-header">
+        <div class="chat-header-details">
+          <h4>Dt. Adem Gürüp</h4>
+          <p>Whatsapp destek hattı</p>
+        </div>
+        <span class="close-chat" id="closeChat">&times;</span>
+      </div>
+      <div class="chat-body">
+        <div class="chat-message">
+          <p>Merhaba 👋</p>
+          <p>Size Nasıl Yardımcı Olabiliriz?</p>
+          <p>Hasta Danışmanlarımız tüm sorularınız için hizmetinizde.</p>
+        </div>
+      </div>
+      <div class="chat-input">
+        <form id="whatsappForm">
+          <div class="chat-input-wrapper">
+            <input
+              type="text"
+              id="whatsappInput"
+              placeholder="Mesajınızı giriniz"
+              required
+            />
+            <button type="submit">
+              <i class="fa fa-paper-plane"></i>
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+
     <!-- Footer Area -->
     <footer id="footer" class="footer">
       <!-- Footer Top -->
@@ -1516,5 +1554,6 @@
     <script src="js/bootstrap.min.js"></script>
     <!-- Main JS -->
     <script src="js/main.js"></script>
+    <script src="js/whatsapp-chat.js"></script>
   </body>
 </html>
