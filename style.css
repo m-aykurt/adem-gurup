@@ -1313,34 +1313,48 @@ body {
 	Srart service CSS
 ===========================*/
 .services .single-service {
-  margin: 30px 0;
-  position: relative;
-  padding-left: 70px;
+  text-align: center;
+  padding: 30px;
+  margin-bottom: 30px;
+  border-radius: 15px;
+  background: #f8f9fa;
+  border: 1px solid #eaeaea;
+  transition: all 0.3s ease;
 }
-.services .single-service i {
-  font-size: 45px;
-  color: #7e7e7e;
-  position: absolute;
-  left: 0;
-  -webkit-transition: all 0.4s ease;
-  -moz-transition: all 0.4s ease;
-  transition: all 0.4s ease;
+
+.services .single-service:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
 }
+
+.services .single-service img {
+  width: 100px;
+  height: 100px;
+  margin-bottom: 20px;
+}
+
 .services .single-service h4 {
-  text-transform: capitalize;
-  margin-bottom: 25px;
-  color: #2c2d3f;
+  font-size: 16px;
+  margin-bottom: 0;
+  color: #666;
 }
+
 .services .single-service h4 a {
-  color: #2c2d3f;
-  font-size: 20px;
-  font-weight: 600;
+  color: #666;
+  font-weight: 500;
+  text-decoration: none;
 }
-.services .single-service h4 a:hover {
-  color: #7e7e7e;
-}
-.services .single-service p {
-  color: #868686;
+
+/* Responsive */
+@media only screen and (max-width: 767px) {
+  .services .single-service {
+    margin-bottom: 20px;
+  }
+
+  .services .single-service img {
+    width: 80px;
+    height: 80px;
+  }
 }
 /*-- Service Details --*/
 .services-details-img {
@@ -4172,3 +4186,44 @@ body {
 /*=========================
 	End Footer CSS
 ===========================*/
+
+/* Tedaviler Bölümü */
+.section-title {
+  color: #00d4ff;
+  font-size: 32px;
+  margin-bottom: 40px;
+}
+
+.service-card {
+  background: #ffffff;
+  border-radius: 20px;
+  padding: 30px;
+  text-align: center;
+  margin-bottom: 30px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.02);
+  border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.service-icon {
+  margin-bottom: 15px;
+}
+
+.service-icon img {
+  width: 80px;
+  height: 80px;
+}
+
+.service-card h3 {
+  color: #666;
+  font-size: 16px;
+  font-weight: 400;
+  margin: 0;
+}
+
+/* Grid yapısı için */
+@media (min-width: 992px) {
+  .col-lg-3 {
+    flex: 0 0 25%;
+    max-width: 25%;
+  }
+}
