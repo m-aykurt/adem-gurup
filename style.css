@@ -4283,3 +4283,28 @@ body {
     display: none;
   }
 }
+
+/* Google Maps Styles */
+.google-maps {
+  background: #fff;
+  padding: 60px 0;
+}
+
+.maps-container {
+  width: 100%;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+  position: relative; /* Eklendi */
+  padding-bottom: 56.25%; /* 16:9 oranı için */
+  height: 0;
+}
+
+.maps-container iframe {
+  position: absolute; /* Eklendi */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+}
