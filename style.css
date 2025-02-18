@@ -1427,88 +1427,89 @@ body {
 	Start Testimonials CSS
 ===============================*/
 .testimonials {
-  background-image: url("img/testi-bg.jpg");
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  position: relative;
+  background: #f9f9f9;
+  padding: 80px 0;
 }
-.testimonials .section-title h2 {
-  color: #fff;
-}
-.testimonials .single-testimonial {
-  text-align: left;
-  position: relative;
+
+.single-testimonial {
   background: #fff;
-  padding: 40px 30px;
-  margin: 5px;
-  margin-bottom: 27px;
-  margin-right: 30px;
-  border-radius: 5px;
-  -webkit-transition: all 0.4s ease;
-  -moz-transition: all 0.4s ease;
-  transition: all 0.4s ease;
-  margin: 0;
-  margin: 30px 20px;
-}
-.testimonials .single-testimonial:hover {
-  box-shadow: 0px 10px 10px #0000001c;
-  transform: translateY(-4px);
-}
-.testimonials .single-testimonial img {
-  position: absolute;
-  left: 30px;
-  bottom: -26px;
-  height: 53px;
-  width: 53px;
-  border-radius: 100%;
-}
-.testimonials .single-testimonial p {
-  color: #868686;
-  font-size: 14px;
-}
-.testimonials .single-testimonial .name {
-  margin-top: 22px;
-  color: #2c2d3f;
-  font-weight: 500;
-  font-size: 15px;
-}
-.testimonials .owl-dots {
-  position: absolute;
-  left: 50%;
-  bottom: -55px;
-  margin-top: -47px;
-  padding: 10px 25px;
-  border-radius: 3px;
-  margin: 0 0 0 -52px;
-  margin-top: 49px;
-  box-sizing: border-box; /* border-box değeri eklendi */
-}
-.testimonials .owl-dots .owl-dot {
-  display: inline-block;
-  margin-right: 10px;
-}
-.testimonials .owl-dots .owl-dot:last-child {
-  margin: 0px;
-}
-.testimonials .owl-dots .owl-dot span {
-  width: 10px;
-  height: 10px;
-  display: block;
-  border-radius: 30px;
-  -webkit-transition: all 0.3s ease;
-  -moz-transition: all 0.3s ease;
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+  margin: 15px;
   transition: all 0.3s ease;
-  margin: 0;
-  background: #fff;
+  max-width: 750px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.testimonial-text {
   position: relative;
+  margin-bottom: 20px;
+  max-height: 250px;
+  overflow: hidden;
 }
-.testimonials .owl-dots .owl-dot span:hover {
-  background: #fff;
+
+.testimonial-text i {
+  font-size: 30px;
+  color: #1a76d1;
+  margin-bottom: 15px;
+  display: block;
 }
-.testimonials .owl-dots .owl-dot.active span {
-  background: #fff;
-  width: 20px;
+
+.testimonial-text p {
+  font-size: 16px;
+  line-height: 26px;
+  color: #666;
+  font-style: italic;
+  display: -webkit-box;
+  -webkit-line-clamp: 7;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.testimonial-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 15px;
+}
+
+.testimonial-info h4 {
+  font-size: 18px;
+  margin-bottom: 5px;
+  color: #1a76d1;
+}
+
+.testimonial-info p {
+  font-size: 14px;
+  color: #777;
+  margin-bottom: 10px;
+}
+
+.rating {
+  color: #ffd700;
+  margin-top: 5px;
+}
+
+/* Owl Carousel Dot'ları tamamen gizle */
+.testimonial-slider .owl-dots {
+  display: none;
+}
+
+@media only screen and (max-width: 768px) {
+  .single-testimonial {
+    max-width: 100%;
+  }
+
+  .testimonial-text {
+    max-height: 200px;
+  }
+
+  .testimonial-text p {
+    -webkit-line-clamp: 6;
+  }
 }
 /*=============================
 	End Testimonials CSS
@@ -4239,5 +4240,46 @@ body {
   .col-lg-3 {
     flex: 0 0 25%;
     max-width: 25%;
+  }
+}
+
+/* Owl Carousel Dot'ları */
+.testimonial-slider .owl-dots {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.testimonial-slider .owl-dot {
+  width: 8px;
+  height: 8px;
+  background: #ddd;
+  border-radius: 50%;
+  display: inline-block;
+  margin: 0 4px;
+}
+
+.testimonial-slider .owl-dot.active {
+  background: #1a76d1;
+}
+
+/* Slider container için margin */
+.testimonials .owl-carousel {
+  margin-bottom: 30px;
+}
+
+/* Responsive düzenlemeler */
+@media only screen and (max-width: 768px) {
+  .testimonial-slider .owl-dots {
+    bottom: -45px;
+  }
+
+  .testimonials .owl-carousel {
+    margin-bottom: 50px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .testimonial-slider .owl-dots {
+    display: none;
   }
 }
