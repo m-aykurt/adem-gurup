@@ -4202,6 +4202,15 @@ body {
   margin-bottom: 30px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.02);
   border: 1px solid rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+  display: block; /* Link için gerekli */
+  text-decoration: none; /* Link altı çizgiyi kaldır */
+  cursor: pointer;
+}
+
+.service-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.05);
 }
 
 .service-icon {
@@ -4218,6 +4227,11 @@ body {
   font-size: 16px;
   font-weight: 400;
   margin: 0;
+  transition: color 0.3s ease;
+}
+
+.service-card:hover h3 {
+  color: #00d4ff; /* Hover durumunda yazı rengi değişimi */
 }
 
 /* Grid yapısı için */
