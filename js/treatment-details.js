@@ -44,13 +44,6 @@ function updatePageContent(content) {
             ${content.advantages.map((adv) => `<li>${adv}</li>`).join("")}
         </ul>
         
-        <div class="share">
-            <h4>Paylaş -</h4>
-            <ul>
-                <li><a href="#"><i class="fa fa-facebook-official"></i></a></li>
-                <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                <li><a href="#"><i class="fa fa-whatsapp"></i></a></li>
-            </ul>
-        </div>
+       
     `;
 }
