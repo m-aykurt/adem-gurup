@@ -4408,6 +4408,61 @@ body {
   line-height: 1.4;
 }
 
+/* Direkt iletişim butonu stili */
+.direct-contact-btn {
+  background: #f5f5f5;
+  border-radius: 7px;
+  padding: 10px 15px;
+  text-align: center;
+  margin-top: 15px;
+}
+
+.direct-contact-btn p {
+  color: #303030;
+  margin: 0 0 10px;
+  font-size: 14px;
+}
+
+.direct-contact-btn a {
+  color: #128c7e;
+  font-weight: 500;
+  text-decoration: none;
+}
+
+.direct-contact-btn a:hover {
+  text-decoration: underline;
+}
+
+/* Mesaj şablon butonları */
+.template-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 10px;
+  justify-content: center;
+}
+
+.template-btn {
+  background: #128c7e;
+  color: white;
+  border: none;
+  border-radius: 20px;
+  padding: 6px 12px;
+  font-size: 13px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.template-btn:hover {
+  background: #0a6960;
+}
+
+.small-text {
+  font-size: 12px;
+  color: #666;
+  margin-top: 10px;
+}
+
 .chat-input {
   padding: 15px;
   background: #f0f0f0;
