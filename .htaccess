@@ -1,0 +1,34 @@
+# Apache ayarlarını başlat
+RewriteEngine On
+
+# WWW olmayan adresi WWW'ye yönlendir (isteğe bağlı, SEO için önerilir)
+RewriteCond %{HTTP_HOST} !^www\. [NC]
+RewriteRule ^(.*)$ https://www.%{HTTP_HOST}/$1 [L,R=301]
+
+# HTTPS yönlendirmesi (güvenli bağlantı için)
+RewriteCond %{HTTPS} off
+RewriteRule ^(.*)$ https://%{HTTP_HOST}/$1 [L,R=301]
+
+# index.php'yi gizle (örneğin: /iletisim.php yerine /iletisim yazmak için)
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^([a-zA-Z0-9_-]+)$ $1.php [L]
+
+# Gzip sıkıştırma (site hızını artırır)
+<IfModule mod_deflate.c>
+  AddOutputFilterByType DEFLATE text/plain
+  AddOutputFilterByType DEFLATE text/html
+  AddOutputFilterByType DEFLATE text/xml
+  AddOutputFilterByType DEFLATE text/css
+  AddOutputFilterByType DEFLATE application/javascript
+  AddOutputFilterByType DEFLATE application/json
+</IfModule>
+
+# .htaccess dosyasına erişimi engelle
+<Files .htaccess>
+  Order allow,deny
+  Deny from all
+</Files>
+
+# Site haritası (arama motorları için)
+Sitemap: https://www.ademgurup.com/sitemap.xml
