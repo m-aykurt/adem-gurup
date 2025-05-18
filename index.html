@@ -305,7 +305,53 @@
         height: 100%; /* Fill the .appointment-image div */
         object-fit: cover; /* Cover the area, cropping if necessary, maintaining aspect ratio */
         object-position:right; /* Center the image content if cropped */
-        
+      }
+
+      /* END APPOINTMENT IMAGE STYLE */
+
+      /* VIDEO AREA STYLES */
+      .video-area {
+        padding: 50px 20px; /* Dikey ve yatay iç boşluk */
+        background-color: #f8f9fa; /* Bölüm için hafif bir arka plan rengi */
+        text-align: center; /* İçeriği (iframe sarmalayıcısını) ortalamak için */
+      }
+      .video-wrapper {
+        position: relative;
+        padding-bottom: 56.25%; /* 16:9 en boy oranı için (yükseklik / genişlik) */
+        height: 0;
+        overflow: hidden;
+        max-width: 850px; /* Videonun maksimum genişliği */
+        margin: 0 auto; /* Sarmalayıcıyı bölüm içinde ortalar */
+        border-radius: 12px; /* Kenar yuvarlaklığı */
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1); /* Hafif bir gölge efekti */
+      }
+      .video-wrapper iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        border: 0; /* iframe kenarlığını kaldır */
+      }
+      /* END VIDEO AREA STYLES */
+
+      /* DESKTOP SPECIFIC STYLES FOR VIDEO AREA */
+      @media (min-width: 992px) { /* Desktop screens (lg breakpoint and up) */
+        .video-wrapper iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 70%;
+        border: 0; /* iframe kenarlığını kaldır */
+      }
+        .video-area {
+          padding-top: 20px; /* Further reduce top padding */
+          padding-bottom: 20px; /* Further reduce bottom padding */
+        }
+        .video-wrapper {
+          max-width: 550px; /* Further reduce max-width to make video container smaller on desktop */
+        }
       }
     </style>
     <!-- Google tag (gtag.js) -->
@@ -491,33 +537,65 @@
 
     <!-- Start Slider Area -->
     <section class="slider">
-      <div
-        class="hero-section"
-        style="background-image: url('img/klinik/adem-gurup-hero-1.jpg')"
-      >
-        <div class="container">
-          <div class="row justify-content-end">
-            <div class="col-lg-6">
-              <div class="text">
-                <h1>
-                  Modern Diş Tedavileri ile <span>Sağlıklı</span> ve
-                  <span>Estetik</span> Gülüşler!
-                </h1>
-                <p>
-                  İzmir Karşıyaka'nın merkezinde, son teknoloji ekipmanlar ve
-                  uzman kadromuzla kaliteli diş hekimliği hizmetleri sunuyoruz.
-                </p>
-                <div class="buttonBottom">
-                  <a href="#appointment" class="btn">Randevu Al</a>
-                  <a href="contact.html" class="btn primary">Detaylı Bilgi</a>
+      <div class="hero-main-slider owl-carousel">
+        <!-- Single Hero Slide 1 -->
+        <div class="hero-section" style="background-image: url('img/klinik/adem-gurup-hero-1.jpg');">
+          <div class="container">
+            <div class="row justify-content-end">
+              <div class="col-lg-6">
+                <div class="text">
+                  <h1>
+                    Gülüşünüzü Yeniden Keşfedin: <span>Sağlık</span> ve
+                    <span>Estetiğin</span> Mükemmel Uyumu!
+                  </h1>
+                  <p>
+                    İzmir Karşıyaka'daki kliniğimizde, en güncel diş hekimliği teknolojileri ve kişiye özel tedavi yaklaşımlarımızla hayalinizdeki gülüşe kavuşun.
+                  </p>
+                  <div class="buttonBottom">
+                    <a href="#appointment" class="btn">Randevu Al</a>
+                    <a href="contact.html" class="btn primary">Detaylı Bilgi</a>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
         </div>
+        <!--/ End Single Hero Slide 1 -->
+
+        <div class="hero-section" style="background-image: url('img/klinik/adem-gurup-hero-4.jpg'); background-position: right center;">
+          <div class="container">
+            <div class="row justify-content-start justify-content-lg-end">
+              <div class="col-lg-6">
+                <div class="text hero-slide-4-text">
+                   <div class="text4">
+                       <h1>
+                        Uzman Dokunuşlarla Işıldayan Gülüşler: <span>Teknolojiyi</span> Sizin İçin <span>Kullanıyoruz!</span>
+                      </h1>
+                      <p>
+                        Deneyimli ekibimiz ve modern tedavi yöntemlerimizle, Karşıyaka Bostanlı'da sizlere konforlu ve etkili diş sağlığı çözümleri sunmaktan gurur duyarız.
+                      </p>
+                      <div class="buttonBottom">
+                    <a href="#appointment" class="btn">Randevu Al</a>
+                    <a href="contact.html" class="btn primary">Detaylı Bilgi</a>
+                  </div>
+                  </div>
+                 
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
       </div>
     </section>
     <!--/ End Slider Area -->
+
+  <section class="video-area">
+    <div class="video-wrapper">
+      <iframe src="https://www.youtube.com/embed/bdqJQxAJaYY" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+    </div>
+  </section>
 
     <!-- Start Schedule Area -->
     <section class="schedule">
@@ -720,7 +798,7 @@
                 <img src="img/klinik/klinik3.JPG" alt="izmir-karşıyaka-diş-tedavisi" title="izmir-karşıyaka-diş-tedavisi" />
                </div>
               <div class="single-pf">
-                <img src="img/klinik/klinik5.JPG" alt="izmir-karşıyaka-diş-doktoru" title="izmir-karşıyaka-diş-doktoru" />
+                <img src="img/klinik/klinik5.jpg" alt="izmir-karşıyaka-diş-doktoru" title="izmir-karşıyaka-diş-doktoru" />
                </div>
               <div class="single-pf">
                 <img src="img/klinik/klinik6.JPG" alt="izmir-karşıyaka-diş-beyazlatma" title="izmir-karşıyaka-diş-beyazlatma" />
@@ -1474,6 +1552,23 @@
                     time: 2000  // As used in main.js
                 });
             }
+        });
+      }
+
+      // Hero Main Slider Initialization
+      if ($('.hero-main-slider').length) {
+        $('.hero-main-slider').owlCarousel({
+            items: 1,
+            loop: true,
+            nav: true,
+            dots: true,
+            autoplay: true,
+            autoplayTimeout: 7000, // Duration between slides
+            autoplayHoverPause: true,
+            smartSpeed: 700, // Transition speed
+            animateOut: 'fadeOut', // Requires animate.css
+            animateIn: 'fadeIn',   // Requires animate.css
+            navText: ["<i class='fa fa-angle-left'></i>", "<i class='fa fa-angle-right'></i>"] // Navigation arrows
         });
       }
     });
