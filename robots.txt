@@ -1,0 +1,6 @@
+# Tüm botlar için siteye tam erişim izni ver
+User-agent: *
+Disallow:
+
+# Site haritası
+Sitemap: https://ademgurup.com/sitemap.xml
