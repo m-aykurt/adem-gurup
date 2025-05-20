@@ -34,7 +34,7 @@
       property="og:description"
       content="İzmir Karşıyaka Bostanlı'da bulunan Dt. Adem Gürüp Diş Kliniği olarak implant, ortodonti, diş beyazlatma ve tüm diş tedavilerinde hizmet vermekteyiz."
     />
-    <meta property="og:image" content="img/logo.png" />
+    <meta property="og:image" content="img/klinik/ademlogowhite.ico" />
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image" />
@@ -47,7 +47,7 @@
       property="twitter:description"
       content="İzmir Karşıyaka Bostanlı'da bulunan Dt. Adem Gürüp Diş Kliniği olarak implant, ortodonti, diş beyazlatma ve tüm diş tedavilerinde hizmet vermekteyiz."
     />
-    <meta property="twitter:image" content="img/logo.png" />
+    <meta property="twitter:image" content="img/klinik/ademlogowhite.ico" />
 
     <!-- Canonical URL -->
     <link rel="canonical" href="https://www.ademgurup.com/" />
@@ -263,7 +263,7 @@
     </title>
 
     <!-- Favicon -->
-    <link rel="icon" href="img/favicon.png" />
+    <link rel="icon" href="img/favicon.ico" />
 
     <!-- Google Fonts -->
     <link
@@ -294,6 +294,66 @@
     <link rel="stylesheet" href="css/normalize.css" />
     <link rel="stylesheet" href="style.css" />
     <link rel="stylesheet" href="css/responsive.css" />
+    <style>
+      .appointment-image {
+        height: 100%; /* Make this div fill its parent column's height */
+        overflow: hidden; /* Clip the image if object-fit: cover results in overflow */
+      }
+      .appointment-image img {
+        display: block; /* Remove extra space below image */
+        width: 100%;
+        height: 100%; /* Fill the .appointment-image div */
+        object-fit: cover; /* Cover the area, cropping if necessary, maintaining aspect ratio */
+        object-position:right; /* Center the image content if cropped */
+      }
+
+      /* END APPOINTMENT IMAGE STYLE */
+
+      /* VIDEO AREA STYLES */
+      .video-area {
+        padding: 50px 20px; /* Dikey ve yatay iç boşluk */
+        background-color: #f8f9fa; /* Bölüm için hafif bir arka plan rengi */
+        text-align: center; /* İçeriği (iframe sarmalayıcısını) ortalamak için */
+      }
+      .video-wrapper {
+        position: relative;
+        padding-bottom: 56.25%; /* 16:9 en boy oranı için (yükseklik / genişlik) */
+        height: 0;
+        overflow: hidden;
+        max-width: 850px; /* Videonun maksimum genişliği */
+        margin: 0 auto; /* Sarmalayıcıyı bölüm içinde ortalar */
+        border-radius: 12px; /* Kenar yuvarlaklığı */
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1); /* Hafif bir gölge efekti */
+      }
+      .video-wrapper iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        border: 0; /* iframe kenarlığını kaldır */
+      }
+      /* END VIDEO AREA STYLES */
+
+      /* DESKTOP SPECIFIC STYLES FOR VIDEO AREA */
+      @media (min-width: 992px) { /* Desktop screens (lg breakpoint and up) */
+        .video-wrapper iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 70%;
+        border: 0; /* iframe kenarlığını kaldır */
+      }
+        .video-area {
+          padding-top: 20px; /* Further reduce top padding */
+          padding-bottom: 20px; /* Further reduce bottom padding */
+        }
+        .video-wrapper {
+          max-width: 550px; /* Further reduce max-width to make video container smaller on desktop */
+        }
+      }
+    </style>
     <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-SZM3LBK0VF"></script>
 <script>
@@ -334,10 +394,9 @@
             <div class="col-lg-6 col-md-5 col-12">
               <!-- Contact -->
               <ul class="top-link">
-                <li><a href="#">Hakkımızda</a></li>
-                <li><a href="#">Hizmetlerimiz</a></li>
-                <li><a href="#">İletişim</a></li>
-                <li><a href="#">SSS</a></li>
+                <li><a href="/dt-adem-gurup.html">Hakkımızda</a></li>
+                <li><a href="/contact.html">İletişim</a></li>
+                <li><a href="#faq">SSS</a></li>
               </ul>
               <!-- End Contact -->
             </div>
@@ -388,11 +447,9 @@
                     <ul class="nav menu">
                       <li class="active">
                         <a href="#"
-                          >Ana Sayfa <i class="icofont-rounded-down"></i
-                        ></a>
-                        <ul class="dropdown">
-                          <li><a href="index.html">Ana Sayfa</a></li>
-                        </ul>
+                          >Ana Sayfa 
+                        </a>
+                      
                       </li>
                       <li><a href="dt-adem-gurup.html">Hekimimiz</a></li>
                       <li>
@@ -480,33 +537,65 @@
 
     <!-- Start Slider Area -->
     <section class="slider">
-      <div
-        class="hero-section"
-        style="background-image: url('img/klinik/adem-gurup.jpg')"
-      >
-        <div class="container">
-          <div class="row">
-            <div class="col-lg-7">
-              <div class="text">
-                <h1>
-                  Modern Diş Tedavileri ile <span>Sağlıklı</span> ve
-                  <span>Estetik</span> Gülüşler!
-                </h1>
-                <p>
-                  İzmir Karşıyaka'nın merkezinde, son teknoloji ekipmanlar ve
-                  uzman kadromuzla kaliteli diş hekimliği hizmetleri sunuyoruz.
-                </p>
-                <div class="button">
-                  <a href="contact.html" class="btn">Randevu Al</a>
-                  <a href="contact.html" class="btn primary">Detaylı Bilgi</a>
+      <div class="hero-main-slider owl-carousel">
+        <!-- Single Hero Slide 1 -->
+        <div class="hero-section" style="background-image: url('img/klinik/adem-gurup-hero-1.jpg');">
+          <div class="container">
+            <div class="row justify-content-end">
+              <div class="col-lg-6">
+                <div class="text">
+                  <h1>
+                    Gülüşünüzü Yeniden Keşfedin: <span>Sağlık</span> ve
+                    <span>Estetiğin</span> Mükemmel Uyumu!
+                  </h1>
+                  <p>
+                    İzmir Karşıyaka'daki kliniğimizde, en güncel diş hekimliği teknolojileri ve kişiye özel tedavi yaklaşımlarımızla hayalinizdeki gülüşe kavuşun.
+                  </p>
+                  <div class="buttonBottom">
+                    <a href="#appointment" class="btn">Randevu Al</a>
+                    <a href="contact.html" class="btn primary">Detaylı Bilgi</a>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
         </div>
+        <!--/ End Single Hero Slide 1 -->
+
+        <div class="hero-section" style="background-image: url('img/klinik/adem-gurup-hero-4.jpg'); background-position: right center;">
+          <div class="container">
+            <div class="row justify-content-start justify-content-lg-end">
+              <div class="col-lg-6">
+                <div class="text hero-slide-4-text">
+                   <div class="text4">
+                       <h1>
+                        Uzman Dokunuşlarla Işıldayan Gülüşler: <span>Teknolojiyi</span> Sizin İçin <span>Kullanıyoruz!</span>
+                      </h1>
+                      <p>
+                        Deneyimli ekibimiz ve modern tedavi yöntemlerimizle, Karşıyaka Bostanlı'da sizlere konforlu ve etkili diş sağlığı çözümleri sunmaktan gurur duyarız.
+                      </p>
+                      <div class="buttonBottom">
+                    <a href="#appointment" class="btn">Randevu Al</a>
+                    <a href="contact.html" class="btn primary">Detaylı Bilgi</a>
+                  </div>
+                  </div>
+                 
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
       </div>
     </section>
     <!--/ End Slider Area -->
+
+  <section class="video-area">
+    <div class="video-wrapper">
+      <iframe src="https://www.youtube.com/embed/bdqJQxAJaYY" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+    </div>
+  </section>
 
     <!-- Start Schedule Area -->
     <section class="schedule">
@@ -548,7 +637,7 @@
                       Size en uygun zamanda randevu alabilmek için online
                       randevu sistemimizi kullanın.
                     </p>
-                    <a href="contact.html"
+                    <a href="#appointment"
                       >RANDEVU AL<i class="fa fa-long-arrow-right"></i
                     ></a>
                   </div>
@@ -596,7 +685,7 @@
               </h2>
               <img src="img/section-img.png" alt="#" />
               <p>
-                Uzman kadromuz, modern teknolojimiz ve hasta memnuniyeti odaklı
+                 Modern teknolojimiz ve hasta memnuniyeti odaklı
                 yaklaşımımızla kaliteli diş tedavisi hizmeti sunuyoruz.
               </p>
             </div>
@@ -649,7 +738,7 @@
           </div>
           <div class="col-lg-6 col-12">
             <div><div style="text-align: right;">
-            <div> <img src="../adem-gurup/img/klinik/dt-adem-gurup.jpg" style="object-fit: cover" alt="izmir-karşıyaka-diş-kliniği" title="izmir-karşıyaka-diş-kliniği"></div>
+            <div> <img src="../img/klinik/dt-adem-gurup.jpg" style="object-fit: cover" alt="izmir-karşıyaka-diş-kliniği" title="izmir-karşıyaka-diş-kliniği"></div>
            </div>
             <!-- Start Choose Rights -->
             <!-- <div class="choose-right">    -->
@@ -701,28 +790,22 @@
             <div class="owl-carousel portfolio-slider">
               <div class="single-pf">
                 <img src="img/klinik/klinik1.JPG" alt="izmir-karşıyaka-diş-kliniği" title="izmir-karşıyaka-diş-kliniği" />
-                <a href="contact.html" class="btn">View Details</a>
-              </div>
+               </div>
               <div class="single-pf">
                 <img src="img/klinik/klinik2.JPG" alt="izmir-dt-adem-gurup" title="izmir-dt-adem-gurup" />
-                <a href="contact.html" class="btn">View Details</a>
-              </div>
+               </div>
               <div class="single-pf">
                 <img src="img/klinik/klinik3.JPG" alt="izmir-karşıyaka-diş-tedavisi" title="izmir-karşıyaka-diş-tedavisi" />
-                <a href="contact.html" class="btn">View Details</a>
-              </div>
+               </div>
               <div class="single-pf">
-                <img src="img/klinik/klinik5.JPG" alt="izmir-karşıyaka-diş-doktoru" title="izmir-karşıyaka-diş-doktoru" />
-                <a href="contact.html" class="btn">View Details</a>
-              </div>
+                <img src="img/klinik/klinik5.jpg" alt="izmir-karşıyaka-diş-doktoru" title="izmir-karşıyaka-diş-doktoru" />
+               </div>
               <div class="single-pf">
                 <img src="img/klinik/klinik6.JPG" alt="izmir-karşıyaka-diş-beyazlatma" title="izmir-karşıyaka-diş-beyazlatma" />
-                <a href="contact.html" class="btn">View Details</a>
-              </div>
+               </div>
               <div class="single-pf">
                 <img src="img/klinik/klinik7.JPG" alt="izmir-karşıyaka-özel-diş-kliniği" title="izmir-karşıyaka-özel-diş-kliniği" />
-                <a href="contact.html" class="btn">View Details</a>
-              </div>
+               </div>
             </div>
           </div>
         </div>
@@ -873,7 +956,7 @@
     <!-- Start Fun-facts -->
     <div id="fun-facts" class="fun-facts section overlay">
       <div class="container">
-        <div class="row">
+        <div class="row fun-facts-slider">
           <div class="col-lg-3 col-md-6 col-12">
             <div class="single-fun">
               <i class="icofont icofont-tooth"></i>
@@ -917,7 +1000,7 @@
 
     <!-- Start Blog Area -->
     <section class="blog section">
-      <div class="container">
+      <div class="container" id="faq">
         <div class="row">
           <div class="col-lg-12">
             <div class="section-title">
@@ -1156,121 +1239,6 @@
     </section>
     <!-- End testimonials -->
 
-    <!-- Start Appointment -->
-    <section class="appointment" id="appointment">
-      <div class="container">
-        <div class="row">
-          <div class="col-lg-12">
-            <div class="section-title">
-              <h2>Online Randevu</h2>
-              <img src="img/section-img.png" alt="#" />
-              <p>
-                Size en uygun zamanda randevu alabilmek için formu doldurun, biz
-                sizi arayalım.
-              </p>
-            </div>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-lg-6 col-md-12 col-12">
-            <form
-              class="form"
-              action="https://formsubmit.co/dt.ademgurup@gmail.com"
-              method="POST"
-            >
-              <!-- Yönlendirme sayfası için gizli input -->
-              <input
-                type="hidden"
-                name="_next"
-                value="https://www.ademgurup.com/tesekkurler.html"
-              />
-              <!-- Spam koruması için gizli input -->
-              <input type="hidden" name="_captcha" value="true" />
-              <!-- E-posta konusu -->
-              <input
-                type="hidden"
-                name="_subject"
-                value="Yeni Randevu Talebi"
-              />
-              <!-- Otomatik yanıt maili -->
-              <input
-                type="hidden"
-                name="_autoresponse"
-                value="Randevu talebiniz alınmıştır. En kısa sürede sizinle iletişime geçeceğiz."
-              />
-
-              <div class="row">
-                <!-- Ad Soyad -->
-                <div class="col-lg-12 col-md-12 col-12">
-                  <div class="form-group">
-                    <input
-                      name="name"
-                      type="text"
-                      placeholder="Adınız Soyadınız *"
-                      required
-                    />
-                  </div>
-                </div>
-
-                <!-- Telefon -->
-                <div class="col-lg-12 col-md-12 col-12">
-                  <div class="form-group">
-                    <input
-                      name="phone"
-                      type="tel"
-                      placeholder="Telefon Numaranız *"
-                      required
-                    />
-                  </div>
-                </div>
-
-                <!-- Email -->
-                <div class="col-lg-12 col-md-12 col-12">
-                  <div class="form-group">
-                    <input
-                      name="email"
-                      type="email"
-                      placeholder="E-posta Adresiniz *"
-                      required
-                    />
-                  </div>
-                </div>
-
-                <!-- Mesaj -->
-                <div class="col-lg-12 col-md-12 col-12">
-                  <div class="form-group">
-                    <textarea
-                      name="message"
-                      placeholder="Mesajınız... *"
-                      required
-                    ></textarea>
-                  </div>
-                </div>
-              </div>
-
-              <div class="row">
-                <div class="col-lg-5 col-md-4 col-12">
-                  <div class="form-group">
-                    <div class="button">
-                      <button type="submit" class="btn">Randevu Al</button>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-lg-7 col-md-8 col-12">
-                  <p>(En kısa sürede sizi arayacağız)</p>
-                </div>
-              </div>
-            </form>
-          </div>
-          <div class="col-lg-6 col-md-12">
-            <div class="appointment-image">
-              <img src="img/contact-img.png" alt="Randevu" />
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-    <!-- End Appointment -->
 
     <!-- Start Google Maps Area -->
     <section class="google-maps section">
@@ -1396,7 +1364,7 @@
                         >
                       </li>
                       <li>
-                        <a href="faq.html"
+                        <a href="#faq"
                           ><i class="fa fa-caret-right"></i>SSS</a
                         >
                       </li>
@@ -1514,5 +1482,96 @@
     <!-- Main JS -->
     <script src="js/main.js"></script>
     <script src="js/whatsapp-chat.js"></script>
+
+    <script>
+    $(document).ready(function() {
+      // Fun Facts Slider
+      if ($('.fun-facts-slider').length) {
+        var owlFunFacts = $('.fun-facts-slider');
+        owlFunFacts.owlCarousel({
+            loop: true,
+            margin: 10,
+            nav: false,
+            dots: true,
+            autoplay: true,
+            autoplayTimeout: 5000,
+            autoplayHoverPause: true,
+            responsiveClass:true,
+            responsive: {
+                0: { // Mobile portrait
+                    items: 1,
+                    loop: true,
+                    dots: true,
+                    autoplay: true,
+                    mouseDrag: true,
+                    touchDrag: true
+                },
+                576: { // Mobile landscape / Small tablets (sm)
+                    items: 2,
+                    loop: true,
+                    dots: true,
+                    autoplay: true,
+                    mouseDrag: true,
+                    touchDrag: true
+                },
+                768: { // Tablets (md)
+                    items: 2, // Display 2 items on tablets
+                    loop: true,
+                    dots: true,
+                    autoplay: true,
+                    mouseDrag: true,
+                    touchDrag: true
+                },
+                992: { // Desktops (lg) and larger
+                    items: 4,
+                    loop: false,
+                    dots: false,
+                    autoplay: false,
+                    mouseDrag: false,
+                    touchDrag: false,
+                    pullDrag: false,
+                    freeDrag: false,
+                    nav: false
+                }
+            }
+        });
+
+        // Re-initialize counterUp for items within the carousel after it's initialized.
+        // This helps ensure cloned items from the loop also get the counter effect.
+        owlFunFacts.on('initialized.owl.carousel', function(event) {
+            if (typeof $.fn.counterUp === 'function') {
+                $(event.target).find('.counter').each(function() {
+                    var $this = $(this);
+                    // Attempt to reset counterUp data if it causes issues with re-initialization
+                    // This step might need adjustment based on the specific counterUp plugin behavior
+                    $this.removeData('counterup-initialized'); 
+                    $this.removeData('waypoints'); // Waypoints is often used by counterUp
+                });
+                $(event.target).find('.counter').counterUp({
+                    delay: 20, // As used in main.js
+                    time: 2000  // As used in main.js
+                });
+            }
+        });
+      }
+
+      // Hero Main Slider Initialization
+      if ($('.hero-main-slider').length) {
+        $('.hero-main-slider').owlCarousel({
+            items: 1,
+            loop: true,
+            nav: true,
+            dots: true,
+            autoplay: true,
+            autoplayTimeout: 7000, // Duration between slides
+            autoplayHoverPause: true,
+            smartSpeed: 700, // Transition speed
+            animateOut: 'fadeOut', // Requires animate.css
+            animateIn: 'fadeIn',   // Requires animate.css
+            navText: ["<i class='fa fa-angle-left'></i>", "<i class='fa fa-angle-right'></i>"] // Navigation arrows
+        });
+      }
+    });
+    </script>
   </body>
 </html>

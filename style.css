@@ -4538,6 +4538,7 @@ body {
   z-index: 2;
   max-width: 80%; /* Added max-width to prevent text from overlapping image */
   padding-right: 50px; /* Added padding to create more space between text and image */
+  margin-left: auto; /* Added margin-left to push text to the right */
 }
 
 .hero-section .text h1 {
@@ -4560,16 +4561,51 @@ body {
 .hero-section .button .btn {
   margin-right: 10px;
 }
-
+.buttonBottom .btn {
+  color: white;
+}
 @media only screen and (max-width: 767px) {
   .hero-section {
     height: 450px;
     padding: 100px 0;
+    background-position: 30% center; /* Shift background image to the right on mobile */
   }
 
   .hero-section .text h1 {
-    font-size: 30px;
-    line-height: 40px;
+    max-width: 50%;
+    font-size: 18px; /* Reduced font size for mobile */
+    line-height: 22px; /* Adjusted line height for mobile */
+    margin-left: auto;
+  }
+
+  .hero-section button {
+    margin-right: 10px;
+    background-color: red;
+  }
+
+  .hero-section .text p {
+    max-width: 50%;
+    font-size: 14px; /* Reduced font size for mobile */
+    margin-left: auto;
+  }
+
+  .hero-section .text {
+    max-width: 100%; /* Allow text to use full width on mobile */
+    padding-right: 0; /* Remove specific padding on mobile */
+    text-align: center; /* Center text on mobile */
+    margin-left: 0; /* Reset margin-left for mobile centered text */
+  }
+
+  .slider .single-slider .button {
+    text-align: center; /* Center buttons on mobile */
+  }
+  .buttonBottom {
+    display: flex;
+    justify-content: end;
+    gap: 10px;
+  }
+  .buttonBottom .btn {
+    color: white;
   }
 }
 
@@ -4635,4 +4671,34 @@ body {
   font-weight: 600;
   color: #1a76d1;
   margin-right: 10px;
+}
+
+/* Adjust services section for mobile */
+@media only screen and (max-width: 767px) {
+  /* Make services section visible on mobile by removing/commenting out display:none */
+  /* 
+  .services.section {
+    display: none !important; 
+  }
+  */
+
+  .services .row > .col-lg-3.col-md-6.col-sm-12 {
+    flex: 0 0 calc(100% / 3);
+    max-width: calc(100% / 3);
+  }
+
+  /* Optional: Adjust padding and content for service cards if they appear too cramped */
+  .services .service-card {
+    padding: 15px;
+    margin-bottom: 15px;
+  }
+
+  .services .service-icon img {
+    width: 50px;
+    height: 50px;
+  }
+
+  .services .service-card h3 {
+    font-size: 13px;
+  }
 }
