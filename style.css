@@ -4541,21 +4541,23 @@ body {
   margin-left: auto; /* Added margin-left to push text to the right */
 }
 
-.hero-section .text h1 {
+.hero-section .text h2 {
   color: #fff;
-  font-size: 42px;
+  font-size: 32px;
   font-weight: 800;
   line-height: 55px;
-  margin-bottom: 20px;
+  margin-bottom: -20px;
 }
 
-.hero-section .text h1 span {
+.hero-section .text h2 span {
   color: #1a76d1;
 }
 
 .hero-section .text p {
+  margin-top: 30px;
+  min-height: 100px;
   color: #fff;
-  margin-bottom: 35px;
+  margin-bottom: 20px;
 }
 
 .hero-section .button .btn {
@@ -4571,7 +4573,7 @@ body {
     background-position: 30% center; /* Shift background image to the right on mobile */
   }
 
-  .hero-section .text h1 {
+  .hero-section .text h2 {
     max-width: 50%;
     font-size: 18px; /* Reduced font size for mobile */
     line-height: 22px; /* Adjusted line height for mobile */
