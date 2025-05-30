@@ -311,47 +311,69 @@
 
       /* VIDEO AREA STYLES */
       .video-area {
-        padding: 50px 20px; /* Dikey ve yatay iç boşluk */
-        background-color: #f8f9fa; /* Bölüm için hafif bir arka plan rengi */
-        text-align: center; /* İçeriği (iframe sarmalayıcısını) ortalamak için */
+        padding: 32px 0 24px 0; /* Üst ve alt boşlukları azalttık */
+        background: #f8f9fa;
       }
-      .video-wrapper {
-        position: relative;
-        padding-bottom: 56.25%; /* 16:9 en boy oranı için (yükseklik / genişlik) */
-        height: 0;
+      .video-slider .video-wrapper {
+        width: 100%;
+        aspect-ratio: 16/9;
+        background: #222e36;
+        border-radius: 16px;
+        box-shadow: 0 4px 24px rgba(0,0,0,0.08);
         overflow: hidden;
-        max-width: 850px; /* Videonun maksimum genişliği */
-        margin: 0 auto; /* Sarmalayıcıyı bölüm içinde ortalar */
-        border-radius: 12px; /* Kenar yuvarlaklığı */
-        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1); /* Hafif bir gölge efekti */
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0 auto;
       }
-      .video-wrapper iframe {
-        position: absolute;
-        top: 0;
-        left: 0;
+      .video-slider .video-wrapper iframe {
         width: 100%;
         height: 100%;
-        border: 0; /* iframe kenarlığını kaldır */
+        border: 0;
+        display: block;
       }
-      /* END VIDEO AREA STYLES */
-
-      /* DESKTOP SPECIFIC STYLES FOR VIDEO AREA */
-      @media (min-width: 992px) { /* Desktop screens (lg breakpoint and up) */
-        .video-wrapper iframe {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 70%;
-        border: 0; /* iframe kenarlığını kaldır */
-      }
+      @media (max-width: 991px) {
         .video-area {
-          padding-top: 20px; /* Further reduce top padding */
-          padding-bottom: 20px; /* Further reduce bottom padding */
+          padding: 16px 0 12px 0;
         }
-        .video-wrapper {
-          max-width: 550px; /* Further reduce max-width to make video container smaller on desktop */
+        .video-slider .video-wrapper {
+          border-radius: 8px;
         }
+      }
+
+      /* Instagram Float Button Styles */
+      .instagram-float {
+        position: fixed;
+        width: 60px;
+        height: 60px;
+        bottom: 40px; /* WhatsApp ile aynı hizada olması için biraz yukarı alabiliriz veya farklı bir değer verebiliriz */
+        right: 40px;
+        background-color: #C13584; /* Instagram gradientinin bir parçası, tek renk daha basit olur */
+        color: #FFF;
+        border-radius: 50px;
+        text-align: center;
+        font-size: 30px;
+        box-shadow: 2px 2px 6px rgba(0,0,0,0.26);
+        z-index: 1000;
+        transition: background-color 0.3s ease;
+      }
+      .instagram-float:hover {
+        background-color: #A32B6F; /* Hover rengi biraz daha koyu */
+        color: #FFF;
+      }
+      .instagram-float i {
+        margin-top: 15px;
+        color: #FFFFFF; /* Instagram ikonunu beyaz yapar */
+      }
+
+      /* WhatsApp butonunun pozisyonunu Instagram ile çakışmaması için ayarlayalım */
+      .whatsapp-float {
+        bottom: 40px; /* veya 110px eğer Instagram altta kalacaksa */
+        left: 40px;
+      }
+
+      .whatsapp-float i {
+        color: #FFFFFF; /* WhatsApp ikonunu beyaz yapar */
       }
     </style>
     <!-- Google tag (gtag.js) -->
@@ -428,7 +450,7 @@
                 <div class="logo">
                   <a href="index.html"
                     ><img
-                      src="img/klinik/ademlogowhite.ico"
+                    src="img/klinik/ademlogowhite.ico"
                       alt="İzmir Karşıyaka Diş Kliniği - Adem Gurup"
                       title=" İzmir Karşıyaka Diş Kliniği - Adem Gurup"
                       width="70"
@@ -446,14 +468,14 @@
                   <nav class="navigation">
                     <ul class="nav menu">
                       <li class="active">
-                        <a href="#"
+                        <a href="/"
                           >Ana Sayfa 
                         </a>
                       
                       </li>
                       <li><a href="dt-adem-gurup.html">Hekimimiz</a></li>
                       <li>
-                        <a href="#"
+                        <a href="/izmir-implantoloji.html"
                           >Tedaviler <i class="icofont-rounded-down"></i
                         ></a>
                         <ul class="dropdown">
@@ -524,7 +546,7 @@
               </div>
               <div class="col-lg-2 col-12">
                 <div class="get-quote">
-                  <a href="#appointment" class="btn">Randevu Al</a>
+                  <a target="_blank" href="https://www.doktortakvimi.com/adem-gurup/dis-hekimi/izmir?utm_source=google&utm_medium=gmb&utm_campaign=240045&utm_content=post_book_now" class="btn">Randevu Al</a>
                 </div>
               </div>
             </div>
@@ -544,15 +566,15 @@
             <div class="row justify-content-end">
               <div class="col-lg-6">
                 <div class="text">
-                  <h1>
+                  <h2>
                     Gülüşünüzü Yeniden Keşfedin: <span>Sağlık</span> ve
                     <span>Estetiğin</span> Mükemmel Uyumu!
-                  </h1>
+                  </h2>
                   <p>
                     İzmir Karşıyaka'daki kliniğimizde, en güncel diş hekimliği teknolojileri ve kişiye özel tedavi yaklaşımlarımızla hayalinizdeki gülüşe kavuşun.
                   </p>
                   <div class="buttonBottom">
-                    <a href="#appointment" class="btn">Randevu Al</a>
+                    <a target="_blank" href="https://www.doktortakvimi.com/adem-gurup/dis-hekimi/izmir?utm_source=google&utm_medium=gmb&utm_campaign=240045&utm_content=post_book_now" class="btn">Randevu Al</a>
                     <a href="contact.html" class="btn primary">Detaylı Bilgi</a>
                   </div>
                 </div>
@@ -568,14 +590,14 @@
               <div class="col-lg-6">
                 <div class="text hero-slide-4-text">
                    <div class="text4">
-                       <h1>
+                       <h2>
                         Uzman Dokunuşlarla Işıldayan Gülüşler: <span>Teknolojiyi</span> Sizin İçin <span>Kullanıyoruz!</span>
-                      </h1>
+                      </h2>
                       <p>
                         Deneyimli ekibimiz ve modern tedavi yöntemlerimizle, Karşıyaka Bostanlı'da sizlere konforlu ve etkili diş sağlığı çözümleri sunmaktan gurur duyarız.
                       </p>
                       <div class="buttonBottom">
-                    <a href="#appointment" class="btn">Randevu Al</a>
+                    <a target="_blank" href="https://www.doktortakvimi.com/adem-gurup/dis-hekimi/izmir?utm_source=google&utm_medium=gmb&utm_campaign=240045&utm_content=post_book_now" class="btn">Randevu Al</a>
                     <a href="contact.html" class="btn primary">Detaylı Bilgi</a>
                   </div>
                   </div>
@@ -591,11 +613,6 @@
     </section>
     <!--/ End Slider Area -->
 
-  <section class="video-area">
-    <div class="video-wrapper">
-      <iframe src="https://www.youtube.com/embed/bdqJQxAJaYY" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-    </div>
-  </section>
 
     <!-- Start Schedule Area -->
     <section class="schedule">
@@ -616,7 +633,7 @@
                       Diş ağrısı, travma gibi acil durumlarda hızlı müdahale
                       için bize ulaşın.
                     </p>
-                    <a href="#"
+                    <a href="/contact.html"
                       >DETAYLI BİLGİ<i class="fa fa-long-arrow-right"></i
                     ></a>
                   </div>
@@ -637,7 +654,7 @@
                       Size en uygun zamanda randevu alabilmek için online
                       randevu sistemimizi kullanın.
                     </p>
-                    <a href="#appointment"
+                    <a target="_blank" href="https://www.doktortakvimi.com/adem-gurup/dis-hekimi/izmir?utm_source=google&utm_medium=gmb&utm_campaign=240045&utm_content=post_book_now"
                       >RANDEVU AL<i class="fa fa-long-arrow-right"></i
                     ></a>
                   </div>
@@ -658,10 +675,10 @@
                       <li class="day">
                         Pazartesi - Cuma <span>09.00-19.00</span>
                       </li>
-                      <li class="day">Cumartesi <span>09.00-17.00</span></li>
+                      <li class="day">Cumartesi <span>09.00-19.00</span></li>
                       <li class="day">Pazar <span>Kapalı</span></li>
                     </ul>
-                    <a href="#"
+                    <a href="/contact.html"
                       >DETAYLI BİLGİ<i class="fa fa-long-arrow-right"></i
                     ></a>
                   </div>
@@ -680,9 +697,9 @@
         <div class="row">
           <div class="col-lg-12">
             <div class="section-title">
-              <h2 style="font-size: 25px">
+              <h1 style="font-size: 25px">
                 İzmir Karşıkaya Diş Kliniği - Dt. Adem GÜRÜP
-              </h2>
+              </h1>
               <img src="img/section-img.png" alt="#" />
               <p>
                  Modern teknolojimiz ve hasta memnuniyeti odaklı
@@ -765,6 +782,34 @@
       </div>
     </section>
     <!--/ End Why choose -->
+    <section class="video-area">
+    <div class="row">
+          <div class="col-lg-12">
+            <div class="section-title">
+              <h2>Kliniğimizden Kareler</h2>
+              <img src="img/section-img.png" alt="#" />
+              <p>
+                Modern ve steril ortamımızda, son teknoloji cihazlarımızla
+                hastalarımıza konforlu bir tedavi deneyimi sunuyoruz.
+                Kliniğimizi daha yakından tanımak için galerimizi
+                inceleyebilirsiniz.
+              </p>
+            </div>
+          </div>
+        </div>
+      <div class="video-slider owl-carousel">
+        <div class="video-wrapper">
+          <iframe src="https://www.youtube.com/embed/ghuJISA85R0" title="Biz kimiz? Hangi tedavileri yapıyoruz?" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        </div>
+        <div class="video-wrapper">
+          <iframe src="https://www.youtube.com/embed/jvwKFRa3xic" title="Tedavi Süreçleri" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        </div>
+        <div class="video-wrapper">
+          <iframe src="https://www.youtube.com/embed/bdqJQxAJaYY" title="Klinik Tanıtımı" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        </div>
+      </div>
+    </section>
+  
 
     <!-- Start portfolio -->
     <section class="portfolio section">
@@ -1279,6 +1324,11 @@
       <i class="fa fa-whatsapp"></i>
     </a>
 
+    <!-- Instagram Float Button -->
+    <a href="https://www.instagram.com/dtademgurup" target="_blank" class="instagram-float" aria-label="Dt. Adem Gürüp Instagram">
+      <i class="fa fa-instagram"></i>
+    </a>
+
     <!-- WhatsApp Chat Window -->
     <div class="whatsapp-chat" id="whatsappChat">
       <div class="chat-header">
@@ -1321,6 +1371,18 @@
             <div class="col-lg-3 col-md-6 col-12">
               <div class="single-footer">
                 <h2>Hakkımızda</h2>
+                                <!-- Start Logo -->
+                                <div class="logo">
+                                  <a href="index.html"
+                                    ><img
+                                    src="img/klinik/ademlogowhite.ico"
+                                      alt="İzmir Karşıyaka Diş Kliniği - Adem Gurup"
+                                      title=" İzmir Karşıyaka Diş Kliniği - Adem Gurup"
+                                      width="70"
+                                      height="70"
+                                  /></a>
+                                </div>
+                                <!-- End Logo -->
                 <p>
                   İzmir Karşıyaka Bostanlı'da modern diş hekimliği hizmetleri
                   sunuyoruz. Deneyimli kadromuz ve son teknoloji
@@ -1383,7 +1445,7 @@
                 <h2>Çalışma Saatleri</h2>
                 <ul class="time-sidual">
                   <li class="day">Pazartesi - Cuma <span>09.00-19.00</span></li>
-                  <li class="day">Cumartesi <span>09.00-17.00</span></li>
+                  <li class="day">Cumartesi <span>09.00-19.00</span></li>
                   <li class="day">Pazar <span>Kapalı</span></li>
                 </ul>
               </div>
@@ -1479,6 +1541,10 @@
     <script src="http://cdnjs.cloudflare.com/ajax/libs/waypoints/2.0.3/waypoints.min.js"></script>
     <!-- Bootstrap JS -->
     <script src="js/bootstrap.min.js"></script>
+    <!-- GMaps JS (Moved before main.js) -->
+    <script src="js/gmaps.min.js"></script>
+    <!-- Map Active JS (Moved before main.js) -->
+    <script src="js/map-active.js"></script>
     <!-- Main JS -->
     <script src="js/main.js"></script>
     <script src="js/whatsapp-chat.js"></script>
@@ -1563,12 +1629,28 @@
             nav: true,
             dots: true,
             autoplay: true,
-            autoplayTimeout: 7000, // Duration between slides
+            autoplayTimeout: 3000, // Changed from 7000 to 3000 for 3 second interval
             autoplayHoverPause: true,
             smartSpeed: 700, // Transition speed
             animateOut: 'fadeOut', // Requires animate.css
             animateIn: 'fadeIn',   // Requires animate.css
             navText: ["<i class='fa fa-angle-left'></i>", "<i class='fa fa-angle-right'></i>"] // Navigation arrows
+        });
+      }
+
+      // Video Slider Initialization
+      if ($('.video-slider').length) {
+        $('.video-slider').owlCarousel({
+          items: 3,
+          margin: 24,
+          loop: false,
+          dots: true,
+          nav: false,
+          responsive: {
+            0: { items: 1 },
+            600: { items: 1 },
+            992: { items: 3 }
+          }
         });
       }
     });
